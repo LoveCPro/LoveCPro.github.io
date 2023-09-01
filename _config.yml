@@ -1,7 +1,7 @@
 # Site settings
 title: DAN Blog
 SEOTitle: 丹丹的博客 | DAN Blog
-header-img: /assets/kadingche.jpg
+header-img: assets/kadingche.jpg
 email: lyldylidanyang@163.com
 description: "代码界的女王，Bug 的克星."
 keyword: "DAN, DAN Blog, 丹丹的博客, guozhi,rouqiu, Linux, C, openwrt"
