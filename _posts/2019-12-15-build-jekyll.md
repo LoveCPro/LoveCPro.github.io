@@ -5,7 +5,7 @@ date:   2019-12-15T16:25:52-05:00
 header-img: img/post-bg-cook.jpg
 author: Dandan
 tags:
-    -  生活
+    -  Life
 ---
 # 前言
 作为一名程序媛， 想搞个地方放自己整理的文件， 用过 csdn，或者本地的有道云笔记， 或者传到 github上， 但是感觉都不太高级。后来了解到可以通过github搭建的自己的博客网站， 甚是高级，值得搞一搞。
