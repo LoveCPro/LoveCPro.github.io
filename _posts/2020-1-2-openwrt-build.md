@@ -4,6 +4,7 @@ title:  "openwrt编译步骤"
 date:   2020-6-2T16:25:52-05:00
 header-img: img/post-bg-cook.jpg
 author: Dandan
+catalog: true
 categories: openwrt
 tags:
     -  openwrt

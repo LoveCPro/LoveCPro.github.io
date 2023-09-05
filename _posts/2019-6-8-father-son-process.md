@@ -5,6 +5,7 @@ subtitle:
 date:   2019-6-8T14:25:52-05:00
 author: Dandan
 header-img: img/post-bg-cook.jpg
+catalog: true
 categories: C程序技术
 tags:
     - C程序技术

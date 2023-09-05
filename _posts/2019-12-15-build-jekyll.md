@@ -4,6 +4,7 @@ title:  "jekyll环境搭建"
 date:   2019-12-15T16:25:52-05:00
 header-img: img/post-bg-cook.jpg
 author: Dandan
+catalog: true
 tags:
     -  Life
 ---

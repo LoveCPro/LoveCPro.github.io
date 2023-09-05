@@ -3,6 +3,7 @@ layout: post
 title:  "C代码自我编程规范"
 date:   2021-12-13T14:25:52-05:00
 header-img: img/post-bg-cook.jpg
+catalog: true
 author: Dandan
 categories: C程序技术
 tags:

@@ -5,6 +5,7 @@ date:   2020-9-30T16:25:52-05:00
 header-img: img/post-bg-cook.jpg
 author: Dandan
 categories: openwrt
+catalog: true
 tags:
     -  openwrt
 ---

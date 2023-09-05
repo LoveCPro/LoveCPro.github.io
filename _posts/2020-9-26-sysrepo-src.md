@@ -4,6 +4,7 @@ title:  "sysrepo源码解析"
 date:   2020-9-26T16:25:52-05:00
 author: Dandan
 header-img: img/post-bg-cook.jpg
+catalog: true
 tags:
     -  openwrt
 ---
