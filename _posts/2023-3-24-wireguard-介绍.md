@@ -30,7 +30,8 @@ Openvpn有10万行代码，而wireguard只有大概4000行代码，代码库相�
 - 比目前主流的 VPN 协议，连接速度要更快，延迟更低（见上图）。
 - 使用了更先进的加密技术，具有前向加密和抗降级攻击的能力。
 - 可以运行在主机中为容器之间提供通信，也可以运行在容器中为主机之间提供通信。
-如此优秀的VPN技术，Linus本尊对WG赞不绝口，他在18年一封邮件中称其为一件艺术品：work of art。
+如此优秀的VPN技术，Linus本尊对WG赞不绝口，他在18年一封邮件中称其为一件艺术品：work of art。  
+
 ## 我司为何选用wg
 在wireguard之前我司都是用的ipsec，遇到了以下的问题：
 - Ipsec建立慢；
@@ -58,7 +59,7 @@ Wg因为两端都配了对方的公钥，因此可以使用1个RTT，2个报文�
 ![](/img/wg握手请求报文.jpg)
 
 ### 握手响应
-接收方校验过程：mac1 ------ encrypted_static  ------  encrypted_timestamp  
+接收方校验过程：mac1 ------ encrypted_static  ------  encrypted_timestamp.  
 一切ok，接收方生成自己的临时密钥对。此时，接收方因为有了对端的临时公钥，已经可以计算出此次协商后加密数据要用的密钥。但它还需要发送一个握手的回复报文来把自己的临时公钥给发送方以便于发送方可以算出同样的密钥：
 - unencrypted_ephemeral：接收方为这次握手临时生成的公钥（未加密，用于 ECDH）
 - mac1：对端公钥加上整个报文内容后的哈希
@@ -79,7 +80,7 @@ Wg因为两端都配了对方的公钥，因此可以使用1个RTT，2个报文�
 - WG：查看解密出来的原始报文是否在 peer 允许的 IP 列表中，如果是，就把原始报文交给内核处理。注意，这里这个报文属于哪个 peer，也是从 key_index 中获得
 - 内核：根据原始报文的目标地址查路由表将报文送出
 
-**保活机制：**
+**保活机制：**  
 保活在wireguard中是可选可配。如果连接是从一个位于 NAT 后面的对等节点（peer）到一个公网可达的对等节点（peer），那么 NAT 后面的对等节点（peer）必须定期发送一个出站 ping 包来检查连通性，如果 IP 有变化，就会自动更新Endpoint。  
 将keepalive时间配置为5，keepalive报文就是每5s发送一次（当隧道中无数据传输时）。
 ![](/img/wgkpalive间隔.jpg)  
@@ -144,6 +145,7 @@ https://zhuanlan.zhihu.com/p/91383212
 https://github.com/wangyu-/udp2raw  
 https://github.com/wangyu-/UDPspeeder  
 https://github-wiki-see.page/m/maxwellhouse102/UDPspeeder/wiki/Fine-grained-FEC-Parameters  
+
 **名词解释：**
 - RTT(Round-Trip Time)，往返时延。在计算机网络中它是一个重要的性能指标，表示从发送端发送数据开始，到发送端收到来自接收端的确认（接收端收到数据后便立即发送确认），总共经历的时延。
 - Jitter:随机抖动
