@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  wg源码解读之时间引起的隧道不能建立
-#subtitle:   TCP伪装成UDP报文的应用
+#subtitle:   TCP伪装成UDP报文的应
 date:   2023-4-2T14:25:52-05:00
 header-img: img/post-bg-cook.jpg
 author: Dandan
@@ -18,6 +18,7 @@ tags:
 - wg版本：20190702
 ## 数据结构
 - 消息类型
+  
 ```c
 enum message_type {
 	MESSAGE_INVALID = 0,
@@ -27,7 +28,8 @@ enum message_type {
 	MESSAGE_DATA = 4
 };
 ```
-- 握手请求结构体
+- 握手请求结构体 
+   
 ```c
 struct message_handshake_initiation {
 	struct message_header header;
@@ -39,7 +41,10 @@ struct message_handshake_initiation {
 };
 
 ```
-- 握手响应结构体
+
+
+- 握手响应结构体  
+  
 ```c
 struct message_handshake_response {
 	struct message_header header;
@@ -52,6 +57,7 @@ struct message_handshake_response {
 
 ```
 - 握手cookie结构体
+
 ```c
 struct message_handshake_cookie {
 	struct message_header header;
@@ -62,6 +68,7 @@ struct message_handshake_cookie {
 
 ```
 - 数据结构体
+  
 ```c
 struct message_data {
 	struct message_header header;
@@ -72,6 +79,7 @@ struct message_data {
 ```
 ## 握手交互
 - 发送握手请求
+    
 ```c
 static void wg_packet_send_handshake_initiation(struct wg_peer *peer)
 {
@@ -179,7 +187,9 @@ out:
 }
 
 ```
+
 - 服务端处理握手请求
+
 ```c
 struct wg_peer *
 wg_noise_handshake_consume_initiation(struct message_handshake_initiation *src,
@@ -297,7 +307,8 @@ out:
 详细说明见<https://cshihong.github.io/2020/10/11/WireGuard%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86/>
 
 - 服务端发送握手响应  
-  接收握手请求之后，校验正确之后，响应者会发送握手响应消息，并计算出共享密钥。
+  接收握手请求之后，校验正确之后，响应者会发送握手响应消息，并计算出共享密钥。  
+
 ```c
 void wg_packet_send_handshake_response(struct wg_peer *peer)
 {
