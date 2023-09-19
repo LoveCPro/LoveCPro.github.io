@@ -60,6 +60,14 @@ kramdown:
 # disqus_username: qiubaiying
 
 # Gitalk
+comments_provider: gitment
+gitment:
+  oauth:
+      clientID: c935bcc8e8c5050798ee                          #生成的clientID
+      clientSecret: 9c6a78682bb78ff1afb339f6e77966fcd63f2433    #生成的clientSecret
+  repo: blog-comments    #仓库名称
+  owner: LoveCPro    #github用户名
+
 gitalk:
   enable: true    #是否开启Gitalk评论
   clientID: c935bcc8e8c5050798ee                          #生成的clientID
