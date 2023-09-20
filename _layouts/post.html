@@ -226,3 +226,18 @@ layout: default
     }
 </style>
 {% endif %}
+
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+    owner: 'LoveCPro',
+    repo: 'blog-comments',
+    oauth: {
+        client_id: 'c935bcc8e8c5050798ee',
+        client_secret: '9c6a78682bb78ff1afb339f6e77966fcd63f2433',
+    },
+});
+gitment.render('gitmentContainer');
+</script>
