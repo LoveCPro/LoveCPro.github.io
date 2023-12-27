@@ -77,7 +77,7 @@ interface eth1
  ## 结果
  dev1:
 ```
-show vrrp
+#show vrrp
 
  Virtual Router ID                    5
  Protocol Version                     3
@@ -120,7 +120,7 @@ show vrrp
 
 dev2:
 ```
-gpn-000FE994C76E# show vrrp
+# show vrrp
 
  Virtual Router ID                    5
  Protocol Version                     3
@@ -163,7 +163,7 @@ gpn-000FE994C76E# show vrrp
 
 dev1抓包：
 ```
-root@gpn-000FE994C64A:~# tcpdump -i eth1
+# tcpdump -i eth1
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on eth1, link-type EN10MB (Ethernet), capture size 262144 bytes
 10:02:18.585748 IP 10.10.10.15 > vrrp.mcast.net: VRRPv3, Advertisement, vrid 5, prio 210, intvl 100cs, length 12
@@ -186,7 +186,7 @@ listening on eth1, link-type EN10MB (Ethernet), capture size 262144 bytes
 ```
 dev2抓包：
 ```
-root@gpn-000FE994C76E:~# tcpdump -i eth1
+# tcpdump -i eth1
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
 listening on eth1, link-type EN10MB (Ethernet), capture size 262144 bytes
 10:02:40.590345 IP 10.10.10.15 > 224.0.0.18: VRRPv3, Advertisement, vrid 5, prio 210, intvl 100cs, length 12
