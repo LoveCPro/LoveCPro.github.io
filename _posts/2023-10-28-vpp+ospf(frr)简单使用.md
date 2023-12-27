@@ -10,7 +10,8 @@ tags:
     - VPP
 ---
 # 前言
-如果要在vpp上启用ospf，当前选择的是frrouting。业务模型是CPE[ lan(192.168.73.4)-----wg(40.40.42.2)-----wan(10.10.10.2) ]-------------------------HUB[ wan(10.0.0.1)-----wg(40.40.42.1)-----lan(172.16.1.3) ] ，和之前一篇[vpp+wg实现三层转发](https://lovecpro.github.io/2023/10/27/vpp+wg%E5%AE%9E%E7%8E%B0%E4%B8%89%E5%B1%82%E8%BD%AC%E5%8F%91/)一样，不过之前是通过静态路由实现，这次通过动态路由实现。
+如果要在vpp上启用ospf，当前选择的是frrouting。业务模型是![vpp与wg三层业务拓扑](/img/vpp与wg三层业务.png)  
+和之前一篇[vpp+wg实现三层转发](https://lovecpro.github.io/2023/10/27/vpp+wg%E5%AE%9E%E7%8E%B0%E4%B8%89%E5%B1%82%E8%BD%AC%E5%8F%91/)一样，不过之前是通过静态路由实现，这次通过动态路由实现。
 
 # 配置
 ## vpp设备配置
