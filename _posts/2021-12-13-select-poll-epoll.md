@@ -143,6 +143,21 @@ error:
 ## epoll
 将上面select代码通过epoll实现一下：
 ```c
+/**
+int s = socket(AF_INET, SOCK_STREAM, 0);
+bind(s, ...);
+listen(s, ...)
+
+int epfd = epoll_create(...);
+epoll_ctl(epfd, ...); //将所有需要监听的socket添加到epfd中
+
+while(1) {
+    int n = epoll_wait(...);
+    for(接收到数据的socket){
+        //处理
+    }
+}
+**/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
